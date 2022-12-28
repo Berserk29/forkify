@@ -10,10 +10,6 @@ import 'core-js/stable';
 import 'regenerator-runtime/runtime'
 import { MODAL_CLOSE_SEC } from "./config.js";
 
-
-// if(module.hot) {
-//   module.hot.accept();
-// }
 ///////////////////////////////////////
 
 const controlRecipes = async function(){
@@ -78,7 +74,6 @@ const controlServings = function(newServings){
   // Update the recipe servings (in state)
   model.updateServings(newServings);
   // Update the recipe view
-  // recipeView.render(model.state.recipe);
   recipeView.update(model.state.recipe);
 }
 
@@ -130,10 +125,6 @@ const controlAddRecipe = async function(newRecipe) {
     console.error(err);
     addRecipeView.renderError(err.message)
   }
-}
-
-const newFeature = function(){
-  console.log('Welcome to the application!');
 }
 
 const init = function(){
